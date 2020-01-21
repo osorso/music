@@ -1,0 +1,7 @@
+GET  http://localhost:3000/top/playlist/highquality HTTP/1.1
+content-type: application/json
+###
+GET  http://localhost:3000/top/playlist/highquality HTTP/1.1
+content-type: application/json
+###
+curl -X GET "http://localhost:3000/song/url?id=405998841,33894312"

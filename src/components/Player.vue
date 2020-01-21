@@ -1,7 +1,7 @@
 <template>
   <div class="player-box">
     <div class="player">
-      <audio src=""></audio>
+      <audio src="" />
     </div>
   </div>
 </template>

@@ -5,14 +5,14 @@ import { Message } from 'element-ui'
 
 const _showLoading = () => {
   store.commit({
-    type: 'set_loading',
+    type: 'SET_LOADING',
     loading: true
   })
 }
 
 const _hideLoading = () => {
   store.commit({
-    type: 'set_loading',
+    type: 'SET_LOADING',
     loading: false
   })
 }
@@ -34,18 +34,18 @@ const _axios = axios.create({
 })
 
 _axios.interceptors.request.use(
-  function (config) {
+  function(config) {
     _showLoading()
     return config
   },
-  function (error) {
+  function(error) {
     _hideLoading()
     return Promise.reject(error)
   }
 )
 
 _axios.interceptors.response.use(
-  function (response) {
+  function(response) {
     _hideLoading()
     const data = response.data
     if (response.request.responseType === 'blob') {
@@ -60,7 +60,7 @@ _axios.interceptors.response.use(
       return Promise.reject(new Error(data.message))
     }
   },
-  function (error) {
+  function(error) {
     _error(error)
     _hideLoading()
     return Promise.reject(error)
@@ -223,12 +223,12 @@ Plugin.install = (Vue, options) => {
   window.http = _http
   Object.defineProperties(Vue.prototype, {
     $axios: {
-      get () {
+      get() {
         return _axios
       }
     },
     $http: {
-      get () {
+      get() {
         return _http
       }
     }

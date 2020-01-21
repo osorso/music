@@ -1,18 +1,13 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <player msg="Welcome to Your Vue.js App"/>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/404">404</router-link>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Player from '@/components/Player.vue'
-
 export default {
-  name: 'home',
-  components: {
-    Player
-  }
+  name: 'Home'
 }
 </script>
