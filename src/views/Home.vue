@@ -1,13 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <player :musicInfo="musicInfo"/>
     <router-link to="/about">About</router-link> |
     <router-link to="/404">404</router-link>
   </div>
 </template>
 
 <script>
+import Player from '@/components/Player'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Player
+  },
+  data() {
+    return {
+      musicInfo: {}
+    }
+  }
 }
 </script>

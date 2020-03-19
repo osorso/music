@@ -1,5 +1,7 @@
 <template>
   <div class="player-box">
+    <div class="name">各区域</div>
+    <div class="control"></div>
     <div class="player">
       <audio src="" />
     </div>
