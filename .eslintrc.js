@@ -6,16 +6,16 @@ module.exports = {
     node: true,
     es6: true
   },
-  extends: [ // 配置标准的js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错
-    "plugin:vue/essential", "eslint:recommended"
+  extends: [ // 配置标准的js风格，就是说写代码的时候要规范的写
+    'plugin:vue/essential', 'eslint:recommended'
   ],
   plugins: [ // 提供插件的，插件名称省略了eslint-plugin-，下面这个配置是用来规范html的
     'vue'
   ],
   /**
-   * "off" -> 0 关闭规则
-   * "warn" -> 1 开启警告规则
-   * "error" -> 2 开启错误规则
+   * 'off' -> 0 关闭规则
+   * 'warn' -> 1 开启警告规则
+   * 'error' -> 2 开启错误规则
   */
   rules: {
     'accessor-pairs': 2,
@@ -55,7 +55,7 @@ module.exports = {
     'curly': [
       2, 'multi-line'
     ],
-    'dot-location': [
+    'dot-location': [ // 对象访问符的位置，换行的时候在行首还是行尾
       2, 'property'
     ],
     'eol-last': 2, // 文件以单一的换行符结束
@@ -80,7 +80,7 @@ module.exports = {
     'jsx-quotes': [
       2, 'prefer-single'
     ],
-    'key-spacing': [
+    'key-spacing': [ // 对象字面量中冒号的前后空格
       2, {
         'beforeColon': false,
         'afterColon': true
@@ -98,56 +98,57 @@ module.exports = {
         'capIsNew': false
       }
     ],
+    'no-constant-condition': 2, // 禁止在条件中使用常量表达式 if(true) if(1)
     'new-parens': 2,
     'no-array-constructor': 2,
     'no-caller': 2,
     'no-console': 'off',
     'no-class-assign': 2,
-    'no-cond-assign': 2,
+    'no-cond-assign': 2, // 禁止在条件表达式中使用赋值语句
     'no-const-assign': 2,
     'no-control-regex': 2,
     'no-delete-var': 2,
-    'no-dupe-args': 2,
+    'no-dupe-args': 2, // 函数参数不能重复
     'no-dupe-class-members': 2,
-    'no-dupe-keys': 2,
-    'no-duplicate-case': 2,
-    'no-empty-character-class': 2,
+    'no-dupe-keys': 2, // 在创建对象字面量时不允许键重复 {a:1,a:1}
+    'no-duplicate-case': 2, // switch中的case标签不能重复
+    'no-empty-character-class': 2, // 正则表达式中的[]内容不能为空
     'no-empty-pattern': 2,
     'no-eval': 2,
     'no-ex-assign': 2,
-    'no-extend-native': 2,
+    'no-extend-native': 2, // 禁止扩展native对象
     'no-extra-bind': 2,
     'no-extra-boolean-cast': 2,
     'no-extra-parens': [
       2, 'functions'
     ],
     'no-fallthrough': 2,
-    'no-floating-decimal': 2,
-    'no-func-assign': 2,
+    'no-floating-decimal': 2, // 禁止省略浮点数中的0 .5 3.
+    'no-func-assign': 2, // 禁止重复的函数声明
     'no-implied-eval': 2,
     'no-inner-declarations': [
       2, 'functions'
     ],
-    'no-invalid-regexp': 2,
+    'no-invalid-regexp': 2, // 禁止无效的正则表达式
     'no-irregular-whitespace': 2,
     'no-iterator': 2,
     'no-label-var': 2,
-    'no-labels': [
+    'no-labels': [ // 禁止标签声明
       2, {
         'allowLoop': false,
         'allowSwitch': false
       }
     ],
-    'no-lone-blocks': 2,
+    'no-lone-blocks': 2, // 禁止不必要的嵌套块
     'no-mixed-spaces-and-tabs': 2,
-    'no-multi-spaces': 2,
+    'no-multi-spaces': 2, // 不能用多余的空格
     'no-multi-str': 2,
     'no-multiple-empty-lines': [
       2, {
         'max': 1
       }
     ],
-    'no-native-reassign': 2,
+    'no-native-reassign': 2, // 不能重写native对象
     'no-negated-in-lhs': 2,
     'no-new-object': 2,
     'no-new-require': 2,
@@ -158,38 +159,39 @@ module.exports = {
     'no-octal-escape': 2,
     'no-path-concat': 2,
     'no-proto': 2,
-    'no-redeclare': 2,
+    'no-redeclare': 2, // 禁止重复声明变量
     'no-regex-spaces': 2,
-    'no-return-assign': [
+    'no-return-assign': [  // return 语句中不能有赋值表达式
       2, 'except-parens'
     ],
     'no-self-assign': 2,
-    'no-self-compare': 2,
-    'no-sequences': 2,
-    'no-shadow-restricted-names': 2,
+    'no-self-compare': 2, // 不能比较自身
+    'no-sequences': 2, // 禁止使用逗号运算符
+    'no-shadow-restricted-names': 2, // 严格模式中规定的限制标识符不能作为声明时的变量名使用
     'no-spaced-func': 2,
-    'no-sparse-arrays': 2,
+    'no-sparse-arrays': 2, // 禁止稀疏数组， [1,,2]
     'no-this-before-super': 2,
-    'no-throw-literal': 2,
+    'no-throw-literal': 2, // 禁止抛出字面量错误 throw 'error'
     'no-trailing-spaces': 2,
-    'no-undef': 2,
+    'no-undef': 2, // 不可以有未定义的变量
     'no-undef-init': 2,
-    'no-unexpected-multiline': 2,
+    'no-unexpected-multiline': 2, // 避免多行表达式
     'no-unmodified-loop-condition': 2,
     'no-unneeded-ternary': [
       2, {
         'defaultAssignment': false
       }
     ],
-    'no-unreachable': 2,
+    'no-unreachable': 2, // 不能有无法执行的代码
     'no-unsafe-finally': 2,
-    'no-unused-vars': [
+    'no-unused-vars': [ // 不能有声明后未被使用的变量或参数
       2, {
         'vars': 'all',
         'args': 'none'
       }
     ],
-    'no-useless-call': 2,
+    'no-else-return': 1, // 如果if语句里面有return,后面不能跟else语句
+    'no-useless-call': 2, // 禁止不必要的call和apply
     'no-useless-computed-key': 2,
     'no-useless-constructor': 2,
     'no-useless-escape': 0,
@@ -237,7 +239,7 @@ module.exports = {
     'space-in-parens': [
       2, 'never'
     ],
-    'space-infix-ops': 2,
+    'space-infix-ops': 2, // 中缀操作符周围要不要有空格
     'space-unary-ops': [
       2, {
         'words': true,
@@ -262,7 +264,7 @@ module.exports = {
       2, 'never'
     ],
     'use-isnan': 2,
-    'valid-typeof': 2,
+    'valid-typeof': 2, // 必须使用合法的typeof的值
     'wrap-iife': [
       2, 'any'
     ],
@@ -273,109 +275,118 @@ module.exports = {
       2, 'never'
     ],
     'prefer-const': 2,
-    'no-debugger': process.env.NODE_ENV === 'production'
-      ? 2
-      : 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [
       2,
       'always', {
         objectsInObjects: false
       }
     ],
-    'array-bracket-spacing': [2, 'never']
+    'array-bracket-spacing': [2, 'never'],
+    'vue/html-indent': ['error', 2, {
+      'attribute': 1,
+      'baseIndent': 1,
+      'closeBracket': 0,
+      'alignAttributesVertically': true,
+      'ignores': []
+    }],
+    'vue/html-quotes': ['error', 'double'],
+    'vue/html-self-closing': ['error', {
+      'html': {
+        'void': 'never',
+        'normal': 'never',
+        'component': 'always'
+      },
+      'svg': 'always',
+      'math': 'always'
+    }],
+    'vue/html-closing-bracket-newline': ['error', {
+      'singleline': 'never',
+      'multiline': 'always'
+    }],
+    'vue/html-closing-bracket-spacing': ['error', {
+      'startTag': 'never',
+      'endTag': 'never',
+      'selfClosingTag': 'always'
+    }],
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 3,
+      'multiline': {
+        'max': 3,
+        'allowFirstLine': true
+      }
+    }],
+    'vue/multiline-html-element-content-newline': ['error', {
+      'ignoreWhenEmpty': true,
+      'ignores': ['pre', 'textarea']
+    }],
+    'vue/no-use-v-if-with-v-for': ['error', {
+      'allowUsingIterationVar': false
+    }],
+    'vue/return-in-computed-property': ['error', {
+      'treatUndefinedAsUnspecified': false
+    }],
+    'vue/no-unused-components': ['error', {
+      'ignoreWhenBindingPresent': true
+    }],
+    'vue/attribute-hyphenation': ['error', 'always', {
+      'ignore': []
+    }],
+    'vue/component-name-in-template-casing': ['error', 'kebab-case', {
+      'ignores': []
+    }],
+    'vue/mustache-interpolation-spacing': ['error', 'always'],
+    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/no-multi-spaces': ['error', {
+      'ignoreProperties': false
+    }],
+    'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
+    'vue/no-template-shadow': ['error'],
+    'vue/prop-name-casing': ['error', 'camelCase'],
+    'vue/require-default-prop': ['error'],
+    'vue/v-bind-style': ['error', 'shorthand'],
+    'vue/v-on-style': ['error', 'shorthand'],
+    'vue/attributes-order': ['error', {
+      'order': [
+        'DEFINITION',
+        'LIST_RENDERING',
+        'CONDITIONALS',
+        'RENDER_MODIFIERS',
+        'GLOBAL',
+        'UNIQUE',
+        'TWO_WAY_BINDING',
+        'OTHER_DIRECTIVES',
+        'OTHER_ATTR',
+        'EVENTS',
+        'CONTENT'
+      ]
+    }],
+    'vue/order-in-components': ['error', {
+      'order': [
+        'el',
+        'name',
+        'parent',
+        'functional',
+        ['delimiters', 'comments'],
+        ['components', 'directives', 'filters'],
+        'extends',
+        'mixins',
+        'inheritAttrs',
+        'model',
+        ['props', 'propsData'],
+        'data',
+        'computed',
+        'watch',
+        'LIFECYCLE_HOOKS',
+        'methods',
+        ['template', 'render'],
+        'renderError'
+      ]
+    }],
+    'vue/this-in-template': ['error', 'never']
   },
   // 指定javaScript语言类型和风格，sourceType用来指定js导入的方式，默认是script，此处设置为module，指某块导入方式
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint'
   }
 }
-
-// 不需要
-// "space-before-function-paren": 0,  // 函数定义时括号前面要不要有空格
-// "eol-last": 0,  // 文件以单一的换行符结束
-// "no-extra-semi": 0, // 可以多余的冒号
-// "semi": 0,  // 语句可以不需要分号结尾
-// "eqeqeq": 0, // 必须使用全等
-// "one-var": 0, // 连续声明
-// "no-undef": 0, // 可以 有未定义的变量
-
-// // 警告
-// "no-extra-boolean-cast": 1, // 不必要的bool转换
-// "no-extra-parens": 1, // 非必要的括号
-// "no-empty": 1, // 块语句中的内容不能为空
-// "no-use-before-define": [1, "nofunc"], // 未定义前不能使用
-// "complexity": [1, 10], // 循环复杂度
-// "no-unused-vars": 1, // 不能有声明后未被使用的变量或参数
-// "max-len": ["warn", { "code": 80 }],
-// // vue
-// // "flow-vars/define-flow-type": 1,
-// // "flow-vars/use-flow-type": 1,
-
-// // react
-// // "react/jsx-uses-react": 2,
-// // "react/jsx-uses-vars": 2,
-
-// // 错误
-// "comma-dangle": [2, "never"], // 对象字面量项尾不能有逗号
-// "no-debugger": 2, // 禁止使用debugger
-// "no-constant-condition": 2, // 禁止在条件中使用常量表达式 if(true) if(1)
-// "no-dupe-args": 2, // 函数参数不能重复
-// "no-dupe-keys": 2, // 在创建对象字面量时不允许键重复 {a:1,a:1}
-// "no-duplicate-case": 2, // switch中的case标签不能重复
-// "no-empty-character-class": 2, // 正则表达式中的[]内容不能为空
-// "no-invalid-regexp": 2, // 禁止无效的正则表达式
-// "no-func-assign": 2, // 禁止重复的函数声明
-// "valid-typeof": 2,  // 必须使用合法的typeof的值
-// "no-unreachable": 2, // 不能有无法执行的代码
-// "no-unexpected-multiline": 2, // 避免多行表达式
-// "no-sparse-arrays": 2, // 禁止稀疏数组， [1,,2]
-// "no-shadow-restricted-names": 2, // 严格模式中规定的限制标识符不能作为声明时的变量名使用
-// "no-cond-assign": 2, // 禁止在条件表达式中使用赋值语句
-// "no-native-reassign": 2, // 不能重写native对象
-
-// // 代码风格
-// "no-tabs": "off",
-// "no-else-return": 1, // 如果if语句里面有return,后面不能跟else语句
-// "no-multi-spaces": 1, // 不能用多余的空格
-// "key-spacing": [1, {  // 对象字面量中冒号的前后空格
-//   "beforeColon": false,
-//   "afterColon": true
-// }],
-// "block-scoped-var": 2, // 块语句中使用var
-// "consistent-return": 2, // return 后面是否允许省略
-// "accessor-pairs": 2, // 在对象中使用getter/setter
-// "dot-location": [2, "property"], // 对象访问符的位置，换行的时候在行首还是行尾
-// "no-lone-blocks": 2, // 禁止不必要的嵌套块
-// "no-labels": 2, // 禁止标签声明
-// "no-extend-native": 2, // 禁止扩展native对象
-// "no-floating-decimal": 2, // 禁止省略浮点数中的0 .5 3.
-// "no-loop-func": 2, // 禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
-// "no-new-func": 2,  // 禁止使用new Function
-// "no-self-compare": 2, // 不能比较自身
-// "no-sequences": 2, // 禁止使用逗号运算符
-// "no-throw-literal": 2, // 禁止抛出字面量错误 throw "error";
-// "no-return-assign": [2, "always"], // return 语句中不能有赋值表达式
-// "no-redeclare": [2, {   // 禁止重复声明变量
-//   "builtinGlobals": true
-// }],
-// "no-unused-expressions": [2, {  // 禁止无用的表达式
-//   "allowShortCircuit": true,
-//   "allowTernary": true
-// }],
-// "no-useless-call": 2, // 禁止不必要的call和apply
-// "no-useless-concat": 2,
-// "no-void": 2, // 禁用void操作符
-// "no-with": 2, // 禁用with
-// "space-infix-ops": 2, // 中缀操作符周围要不要有空格
-// "valid-jsdoc": [2, { // jsdoc规则
-//   "requireParamDescription": true,
-//   "requireReturnDescription": true
-// }],
-// "no-warning-comments": [2, {  // 不能有警告备注
-//   "terms": ["todo", "fixme", "any other term"],
-//   "location": "anywhere"
-// }],
-// "curly": 1, // 必须使用 if(){} 中的{}
-
-// // common js
-// "no-duplicate-imports": 1
